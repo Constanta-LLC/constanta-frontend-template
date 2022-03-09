@@ -1,1 +1,1 @@
-# constanta-frontend-template
+# constanta-frontend-manifest
