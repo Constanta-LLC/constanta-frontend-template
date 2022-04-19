@@ -6,7 +6,7 @@ const defaultLang = 'en';
 
 const extendRule = (attribute: string) => attribute;
 
-export default createI18n({
+const i18n = createI18n({
   fallbackLocale: defaultLang,
   globalInjection: true,
   pluralRules: {
@@ -17,3 +17,12 @@ export default createI18n({
     en
   }
 });
+
+if (import.meta.hot) {
+  import.meta.hot.on('locales-update', () => {
+    // Перезапуск App, если locales обновлены в hot-mode.
+    import.meta.hot?.invalidate();
+  });
+}
+
+export default i18n;

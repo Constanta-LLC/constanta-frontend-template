@@ -9,6 +9,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import eslintPlugin from 'vite-plugin-eslint';
 import vueI18n from '@intlify/vite-plugin-vue-i18n';
 
+import i18nHotReload from './src/plugins/i18nHotReload';
+
 const stylesPath = path.resolve(__dirname, './src/assets/styles');
 
 export default defineConfig({
@@ -43,6 +45,7 @@ export default defineConfig({
       runtimeOnly: false,
       include: path.resolve(__dirname, '@/locales/**')
     }),
+    i18nHotReload(),
     VitePWA({
       mode: 'production',
       strategies: 'generateSW',
