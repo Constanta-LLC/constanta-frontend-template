@@ -1,9 +1,10 @@
 module.exports = {
-  'parser': 'vue-eslint-parser',
-  'parserOptions': {
-    'parser': '@typescript-eslint/parser',
-    'project': './tsconfig.json',
-    'extraFileExtensions': ['.vue'],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    project: './tsconfig.json',
+    extraFileExtensions: ['.vue'],
+    createDefaultProgram: true,
   },
   globals: {
     process: true,
@@ -12,27 +13,26 @@ module.exports = {
     'plugin:vue/essential',
     'eslint:recommended',
     '@vue/typescript',
-    'plugin:@typescript-eslint/recommended',
-    '@vue/prettier',
-    '@vue/prettier/@typescript-eslint'
-  ],
-  plugins: [
-    '@gomarky/no-const-enum'
+    'plugin:@typescript-eslint/recommended'
   ],
   rules: {
+    'comma-dangle': ['error', 'never'],
+    'object-curly-spacing': ['error', 'always'],
+    'semi': ['error', 'always'],
+    'no-extra-semi': ['error'],
+    'quotes': ['error', 'single'],
+    'vue/max-attributes-per-line': [
+      'error', {
+        singleline: 2,
+        multiline: 1,
+      },
+    ],
     'radix': ['error', 'always'],
     'eqeqeq': 2,
     'curly': 2,
 
+    'no-debugger': [1],
     'no-prototype-builtins': 0,
-
-    '@gomarky/no-const-enum/base': 'error',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
 
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-explicit-any': ['error', {
@@ -43,6 +43,7 @@ module.exports = {
       ignoreVoid: true
     }],
 
+    '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/no-require-imports': 'error',
 
     '@typescript-eslint/no-throw-literal': 'error',

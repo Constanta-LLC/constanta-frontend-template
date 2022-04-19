@@ -1,8 +1,8 @@
 webpack.config.js
-prettier.config.js
 .commitlintrc.js
 jest.config.js
-babel.config.js
+
+.eslintrc.js
 
 /ci/
 /old/

@@ -1,1 +1,0 @@
-# constanta-frontend-manifest
