@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -10,10 +11,8 @@ module.exports = {
     process: true,
   },
   extends: [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    '@vue/typescript',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:vue/vue3-recommended',
+    '@vue/typescript/recommended',
   ],
   rules: {
     'comma-dangle': ['error', 'never'],
@@ -35,10 +34,6 @@ module.exports = {
     'no-prototype-builtins': 0,
 
     '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/no-explicit-any': ['error', {
-      ignoreRestArgs: true,
-    }],
-
     '@typescript-eslint/no-floating-promises': ['error', {
       ignoreVoid: true
     }],

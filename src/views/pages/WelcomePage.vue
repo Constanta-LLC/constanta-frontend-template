@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <constanta-logo/>
+    <constanta-logo />
 
     <div class="page__helper">
       {{ $t('welcomePage.helperText') }}
