@@ -11,7 +11,9 @@ import vueI18n from '@intlify/vite-plugin-vue-i18n';
 
 import i18nHotReload from './src/plugins/i18nHotReload';
 
-const stylesPath = path.resolve(__dirname, './src/assets/styles');
+const stylesPath = path
+  .resolve(__dirname, './src/assets/styles')
+  .replace(/\\/g, '/');
 
 export default defineConfig({
   resolve: {
